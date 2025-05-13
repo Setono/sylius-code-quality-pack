@@ -1,0 +1,52 @@
+name: "build"
+on:
+    push: ~
+
+    pull_request: ~
+
+    workflow_dispatch: ~
+
+jobs:
+    checks:
+        name: "PHP ${{ matrix.php-versions }}"
+
+        runs-on: "ubuntu-latest"
+
+        strategy:
+            fail-fast: false
+            matrix:
+                php-versions:
+                    - "8.1"
+                    - "8.2"
+                    - "8.3"
+                    - "8.4"
+
+                sylius:
+                    - "~1.10.0"
+                    - "~1.11.0"
+                    - "~1.12.0"
+                    - "~1.13.0"
+                    - "~1.14.0"
+                    - "~2.0.0"
+
+        steps:
+            -   name: "Checkout"
+                uses: "actions/checkout@v4"
+
+            -   name: "Setup PHP, with composer and extensions"
+                uses: "shivammathur/setup-php@v2"
+                with:
+                    php-version: "${{ matrix.php-versions }}"
+                    coverage: "none"
+
+            -   name: "Add Sylius dependency"
+                run: "composer require --dev --no-install --no-update --no-plugins --no-scripts sylius/sylius:${{ matrix.sylius }}"
+
+            -   name: "Install composer dependencies"
+                uses: "ramsey/composer-install@v3"
+
+            -   name: "Validate composer"
+                run: "composer validate --strict"
+
+            -   name: "Check composer normalized"
+                run: "composer normalize --dry-run"
