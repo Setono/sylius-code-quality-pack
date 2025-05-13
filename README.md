@@ -1,0 +1,1 @@
+# sylius-code-quality-pack
