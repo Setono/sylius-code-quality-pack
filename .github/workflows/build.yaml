@@ -42,7 +42,7 @@ jobs:
                     coverage: "none"
 
             -   name: "Add Sylius dependency"
-                run: "composer require --dev --no-install --no-update --no-plugins --no-scripts sylius/sylius:${{ matrix.sylius }}"
+                run: "composer require --no-install --no-update --no-plugins --no-scripts sylius/sylius:${{ matrix.sylius }}"
 
             -   name: "Install composer dependencies"
                 uses: "ramsey/composer-install@v3"
