@@ -9,7 +9,7 @@
         "infection/infection": "~0.28.1 || ~0.29.14",
         "matthiasnoback/symfony-dependency-injection-test": "^5.1 || ^6.1",
         "phpspec/prophecy-phpunit": "^2.3",
-        "phpunit/phpunit": "^10.5.46 || ^11.5.20 || ^12.1.5",
+        "phpunit/phpunit": "^9.6.23 || ^10.5.46 || ^11.5.20 || ^12.1.5",
         "psalm/plugin-phpunit": "~0.18.4 || ~0.19.5",
         "psalm/plugin-symfony": "^5.2",
         "rector/rector": "^1.2.10",
