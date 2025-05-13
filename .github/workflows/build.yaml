@@ -24,7 +24,6 @@ jobs:
                 symfony:
                     - "~5.4.0"
                     - "~6.4.0"
-                    - "~7.1.0"
                     - "~7.2.0"
 
                 sylius:
@@ -34,14 +33,25 @@ jobs:
                     - "~2.0.0"
 
                 exclude:
+                    # Sylius v2 does not support PHP 8.1
                     -   php: "8.1"
                         sylius: "~2.0.0"
-                    -   php: "8.1"
-                        symfony: "~7.1.0"
+
+                    # SF7 does not support PHP 8.1
                     -   php: "8.1"
                         symfony: "~7.2.0"
+
+                    # Sylius 2.x does not support SF5
                     -   symfony: "~5.4.0"
                         sylius: "~2.0.0"
+
+                    # Sylius 1.x does not support SF7
+                    -   symfony: "~7.2.0"
+                        sylius: "~1.12.0"
+                    -   symfony: "~7.2.0"
+                        sylius: "~1.13.0"
+                    -   symfony: "~7.2.0"
+                        sylius: "~1.14.0"
 
         steps:
             -   name: "Checkout"
