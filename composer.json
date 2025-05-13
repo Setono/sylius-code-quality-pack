@@ -1,6 +1,6 @@
 {
-    "name": "setono/sylius-code-quality-pack",
-    "description": "A pack that installs code quality tools aimed at Sylius projects and plugins",
+    "name": "setono/sylius-plugin-pack",
+    "description": "A pack that installs dependencies for Sylius plugin development",
     "license": "MIT",
     "type": "library",
     "require": {
