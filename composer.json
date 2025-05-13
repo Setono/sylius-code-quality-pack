@@ -6,7 +6,7 @@
     "require": {
         "php": ">=8.1",
         "ergebnis/composer-normalize": "^2.47",
-        "infection/infection": "~0.28.1 || ~0.29.14",
+        "infection/infection": "~0.27.11 || ~0.28.1 || ~0.29.14",
         "matthiasnoback/symfony-dependency-injection-test": "^5.1 || ^6.1",
         "phpspec/prophecy-phpunit": "^2.3",
         "phpunit/phpunit": "^9.6.23 || ^10.5.46 || ^11.5.20 || ^12.1.5",
