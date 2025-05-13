@@ -8,7 +8,7 @@ on:
 
 jobs:
     checks:
-        name: "PHP ${{ matrix.php }} | Sylius ${{ matrix.sylius }}"
+        name: "PHP ${{ matrix.php }} | SF ${{ matrix.symfony }} | Sylius ${{ matrix.sylius }}"
 
         runs-on: "ubuntu-latest"
 
